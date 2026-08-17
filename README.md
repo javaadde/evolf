@@ -1,56 +1,203 @@
-# Evofox-phantom
+<p align="center">
+  <img src="./images/banner.svg" alt="Evofox Phantom banner" width="100%" />
+</p>
 
-This is a small python script that can be used to toggle LED
-modes of an Amkette Evofox Phantom Gaming mouse. 
+<p align="center">
+  <a href="https://www.npmjs.com/package/evofox-phantom-ink-cli"><img src="https://img.shields.io/npm/v/evofox-phantom-ink-cli?style=for-the-badge&logo=npm&label=npm" alt="npm version" /></a>
+  <img src="https://img.shields.io/badge/node-%3E%3D20-0f172a?style=for-the-badge&logo=node.js&logoColor=7dd3fc" alt="Node 20+" />
+  <img src="https://img.shields.io/badge/python-3.x-0f172a?style=for-the-badge&logo=python&logoColor=facc15" alt="Python 3" />
+  <img src="https://img.shields.io/badge/license-MIT-0f172a?style=for-the-badge&logo=open-source-initiative&logoColor=93c5fd" alt="MIT license" />
+</p>
 
-I wrote this because the configuration tool that shipped with the 
-mouse was only available (in binary form) for Microsoft Windows.
+<p align="center">
+  <img src="https://img.shields.io/badge/Ink-Terminal_UI-111827?style=flat-square&logo=react&logoColor=61dafb" alt="Ink terminal UI" />
+  <img src="https://img.shields.io/badge/HID-Python_backend-111827?style=flat-square&logo=python&logoColor=ffd43b" alt="Python HID backend" />
+  <img src="https://img.shields.io/badge/Supports-npm%20%7C%20npx%20%7C%20pnpm-111827?style=flat-square&logo=pnpm&logoColor=f9ad00" alt="Supports npm npx pnpm" />
+</p>
 
+<p align="center">
+  A polished terminal UI for controlling LED modes on the <b>Amkette Evofox Phantom</b> mouse.<br />
+  Built with <b>Ink + React</b>, powered by a lightweight <b>Python HID backend</b>, and packaged for <b>npm</b>, <b>npx</b>, and <b>pnpm</b> users.
+</p>
+
+## Preview
+
+<p align="center">
+  <img src="./images/gui.png" alt="Evofox terminal UI preview" width="900" />
+</p>
+
+<p align="center">
+  This is how the current TUI looks when launched with <code>evofox</code>.
+</p>
+
+## Why This Project Exists
+
+The mouse ships with a Windows-only configuration utility. This repo provides a clean Linux-friendly alternative focused on the LED controls that users actually need day to day.
+
+## Highlights
+
+| Capability | Details |
+| --- | --- |
+| Interactive TUI | Navigate modes with arrow keys and send commands with Enter |
+| Direct CLI mode | Run `evofox --mode slow` for scripts or quick toggles |
+| Auto-detection | Tries to find a compatible mouse automatically |
+| Manual overrides | Supports `--vid` and `--pid` for hardware variants |
+| Multi-tool install | Works with `npm`, `npx`, `pnpm`, and `pnpm dlx` |
+| Publishable package | Ready for npm distribution with bundled runtime files |
+
+## Features
+
+- LED modes: `off`, `static`, `slow`, `fast`
+- Ink-based terminal UI exposed as `evofox`
+- Python HID backend bundled in the published package
+- Works in interactive TTY mode and supports non-interactive direct commands
+- Public-package friendly layout without machine-specific paths
+
+## Requirements
+
+Before using the tool, make sure these are available:
+
+- Node.js `20+`
+- Python `3`
+- Python package `hidapi`
+
+Install `hidapi`:
+
+```bash
+pip install hidapi
 ```
-$ evofox-phantom -h
-usage: evofox-phantom [-h] [--vid VID] [--pid PID]
-					  [-l [{off,static,slow,fast}]]
 
-Toggle LED modes in Amkette Evofox Gaming Mouse
+Arch Linux:
 
-options:
-  -h, --help            show this help message and exit
-  --vid VID             Vendor ID; lsusb(8)
-  --pid PID             Product ID; lsusb(8)
-  -l [{off,static,slow,fast}], --led [{off,static,slow,fast}]
+```bash
+sudo pacman -S python-hidapi
 ```
 
-Phantom supports four modes: off, static, slow and fast. This program,
-at present only supports toggling LEDs.
+## Installation
 
-Here's a demo [video](https://youtu.be/1RXHDZS5G4I):
+### npm
 
-# Install
-
-**Dependencies**: hidapi
-
-```
-$ sudo pip install hidpi
+```bash
+npm install -g evofox-phantom-ink-cli
+evofox
 ```
 
-or alternatively on arch linux systems, 
+### pnpm
 
-```
-$ sudo pacman -S python-hidapi
-```
-
-Install 
-
-```
-$ git clone https://github.com/bojle/evofox-phantom.git
-$ cd evofox-phantom
-$ make install
+```bash
+pnpm add -g evofox-phantom-ink-cli
+evofox
 ```
 
-# TODO
+### npx
 
-* Add toggling DPI values
-* Add re-configuring mouse buttons.
-* Hack and see if the LEDs can be illuminated individually to a color
-of choice.
+```bash
+npx evofox-phantom-ink-cli
+```
 
+### pnpm dlx
+
+```bash
+pnpm dlx evofox-phantom-ink-cli
+```
+
+## Usage
+
+### Launch the interactive UI
+
+```bash
+evofox
+```
+
+### Send a mode directly
+
+```bash
+evofox --mode slow
+evofox --mode static
+```
+
+### Override USB vendor and product IDs
+
+```bash
+evofox --vid 0x30fa --pid 0x1440
+evofox --vid 0x30fa --pid 0x1440 --mode fast
+```
+
+### Show help
+
+```bash
+evofox --help
+```
+
+## Product ID Notes
+
+Do not assume every user will have the exact same `VID` and `PID`.
+
+These values can differ because of:
+
+- hardware revisions
+- firmware revisions
+- controller changes
+- different vendor batches
+- alternate USB presentations of the same product line
+
+That is why this tool supports both:
+
+- auto-detection by default
+- manual override with `--vid` and `--pid`
+
+## Development
+
+This repo is configured as a `pnpm` workspace and still works with `npm`.
+
+### pnpm workflow
+
+```bash
+pnpm install
+pnpm dev
+pnpm build
+```
+
+### npm workflow
+
+```bash
+npm install
+npm run dev
+npm run build
+```
+
+### Local command install
+
+Using pnpm-oriented development:
+
+```bash
+make install-cli
+```
+
+Using npm-oriented development:
+
+```bash
+make install-cli-npm
+```
+
+## Project Layout
+
+```text
+.
+├── evofox-phantom.py   # Python HID backend
+├── src/index.tsx       # Ink terminal UI entry
+├── images/gui.png      # UI screenshot used in the README
+├── images/banner.svg   # README hero banner
+├── package.json        # Publishable npm package metadata
+└── pnpm-workspace.yaml # pnpm workspace config
+```
+
+## Current Limitations
+
+- the tool sends LED commands but does not read back the current LED state from the mouse
+- the UI shows the last successful command sent, not a live synchronized device state
+- compatibility depends on the HID behavior of the connected mouse variant
+
+## License
+
+Released under the [MIT License](./LICENSE).

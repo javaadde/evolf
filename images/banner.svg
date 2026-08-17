@@ -1,0 +1,55 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020"/>
+      <stop offset="0.5" stop-color="#111827"/>
+      <stop offset="1" stop-color="#07131D"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="180" y1="60" x2="980" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="320" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="320" rx="28" fill="url(#bg)"/>
+  <circle cx="970" cy="70" r="170" fill="url(#glow)"/>
+  <circle cx="210" cy="280" r="120" fill="#22D3EE" fill-opacity="0.08"/>
+
+  <g opacity="0.25">
+    <path d="M0 252H1200" stroke="#334155"/>
+    <path d="M0 220H1200" stroke="#1E293B"/>
+    <path d="M0 188H1200" stroke="#1E293B"/>
+    <path d="M0 156H1200" stroke="#1E293B"/>
+    <path d="M0 124H1200" stroke="#1E293B"/>
+    <path d="M0 92H1200" stroke="#1E293B"/>
+    <path d="M0 60H1200" stroke="#1E293B"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="62" y="56" width="450" height="208" rx="20" fill="#0F172A" stroke="#334155"/>
+    <rect x="82" y="80" width="160" height="12" rx="6" fill="#38BDF8"/>
+    <rect x="82" y="110" width="280" height="16" rx="8" fill="#F8FAFC" fill-opacity="0.95"/>
+    <rect x="82" y="138" width="220" height="10" rx="5" fill="#94A3B8" fill-opacity="0.9"/>
+    <rect x="82" y="174" width="84" height="34" rx="10" fill="#FACC15"/>
+    <rect x="178" y="174" width="100" height="34" rx="10" fill="#0EA5E9"/>
+    <rect x="290" y="174" width="92" height="34" rx="10" fill="#1E293B" stroke="#334155"/>
+    <rect x="394" y="174" width="76" height="34" rx="10" fill="#1E293B" stroke="#334155"/>
+    <rect x="82" y="224" width="340" height="12" rx="6" fill="#A855F7" fill-opacity="0.9"/>
+  </g>
+
+  <text x="560" y="108" fill="#F8FAFC" font-family="Verdana, Geneva, sans-serif" font-size="48" font-weight="700">Evofox Phantom</text>
+  <text x="560" y="148" fill="#93C5FD" font-family="Verdana, Geneva, sans-serif" font-size="22" font-weight="600">Ink-powered terminal UI for controlling mouse LED modes</text>
+  <text x="560" y="188" fill="#CBD5E1" font-family="Verdana, Geneva, sans-serif" font-size="18">Interactive TUI, direct CLI mode, npm + npx + pnpm support</text>
+
+  <g>
+    <rect x="560" y="214" width="120" height="38" rx="12" fill="#111827" stroke="#38BDF8"/>
+    <text x="594" y="239" fill="#38BDF8" font-family="Verdana, Geneva, sans-serif" font-size="18" font-weight="700">npm</text>
+    <rect x="694" y="214" width="120" height="38" rx="12" fill="#111827" stroke="#A78BFA"/>
+    <text x="722" y="239" fill="#C4B5FD" font-family="Verdana, Geneva, sans-serif" font-size="18" font-weight="700">npx</text>
+    <rect x="828" y="214" width="140" height="38" rx="12" fill="#111827" stroke="#22D3EE"/>
+    <text x="856" y="239" fill="#67E8F9" font-family="Verdana, Geneva, sans-serif" font-size="18" font-weight="700">pnpm</text>
+  </g>
+</svg>

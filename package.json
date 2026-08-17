@@ -1,0 +1,55 @@
+{
+  "name": "evofox-phantom-ink-cli",
+  "version": "0.1.0",
+  "description": "Ink-based terminal UI for controlling Evofox Phantom mouse LED modes",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@11.3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bojle/evofox-phantom.git"
+  },
+  "homepage": "https://github.com/bojle/evofox-phantom#readme",
+  "bugs": {
+    "url": "https://github.com/bojle/evofox-phantom/issues"
+  },
+  "keywords": [
+    "evofox",
+    "mouse",
+    "ink",
+    "cli",
+    "terminal-ui",
+    "hid"
+  ],
+  "files": [
+    "dist",
+    "evofox-phantom.py",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "evofox": "dist/index.js"
+  },
+  "scripts": {
+    "dev": "ts-node-esm src/index.tsx",
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "start": "node dist/index.js",
+    "prepare": "npm run build",
+    "prepack": "npm run build",
+    "link-cli": "npm run build && npm install -g --prefix ~/.local ."
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "ink": "^5.2.1",
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/react": "^18.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
