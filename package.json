@@ -1,6 +1,6 @@
 {
   "name": "evolf-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Ink-based terminal UI for controlling Evolf mouse LED modes",
   "license": "MIT",
   "type": "module",
