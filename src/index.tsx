@@ -9,17 +9,15 @@ import {Box, Text, render, useApp, useInput, useStdin} from 'ink';
 
 const MODES = ['off', 'static', 'slow', 'fast'] as const;
 const TITLE_LINES = [
-  '                               ####        #####  ',
-  '                                 ##        ##     ',
-  '  .####:   ##:  :##   .####.     ##      #######  ',
-  ' .######:   ##  ##   .######.    ##      #######  ',
-  ' ##:  :##  :##  ##:  ###  ###    ##        ##     ',
-  ' ########   ##..##   ##.  .##    ##        ##     ',
-  ' ########   ##::##   ##    ##    ##        ##     ',
-  ' ##         :####:   ##.  .##    ##        ##     ',
-  ' ###.  :#    ####    ###  ###    ##:       ##     ',
-  ' .#######    ####    .######.    #####     ##     ',
-  '  .#####:    :##:     .####.     .####     ##     '
+  '▄████████  ▄█    █▄   ▄██████▄   ▄█          ▄████████ ',
+  '  ███    ███ ███    ███ ███    ███ ███         ███    ███ ',
+  '  ███    █▀  ███    ███ ███    ███ ███         ███    █▀  ',
+  ' ▄███▄▄▄     ███    ███ ███    ███ ███        ▄███▄▄▄     ',
+  '▀▀███▀▀▀     ███    ███ ███    ███ ███       ▀▀███▀▀▀     ',
+  '  ███    █▄  ███    ███ ███    ███ ███         ███        ',
+  '  ███    ███ ███    ███ ███    ███ ███▌    ▄   ███        ',
+  '  ██████████  ▀██████▀   ▀██████▀  █████▄▄██   ███        ',
+  '                                   ▀                      '
 ];
 const INITIAL_STATUS = 'Idle. Pick a mode and press Enter.';
 const DEVICE_MODE_MESSAGE = 'No read-back HID report exists yet, so live sync is unavailable.';
@@ -238,15 +236,6 @@ function Header() {
   );
 }
 
-function IntroPanel() {
-  return (
-    <Panel title="OVERVIEW">
-      <Text color={THEME.emphasis}>Retro control panel</Text>
-      <Text dimColor>For the Evolf mouse controller</Text>
-    </Panel>
-  );
-}
-
 function ModeButton({mode, isSelected, isLastSent}: ModeButtonProps) {
   const label = mode.toUpperCase().padEnd(6, ' ');
   const backgroundColor = isSelected ? THEME.selected : isLastSent ? THEME.active : undefined;
@@ -400,7 +389,7 @@ function App({options}: {options: CliOptions}) {
 
       <Header />
 
-      <Box>
+      <Box alignSelf="center">
         <Box flexDirection="column" width={64} marginRight={2}>
           <ModePanel selectedIndex={selectedIndex} lastSentMode={lastSentMode} />
 
@@ -414,11 +403,7 @@ function App({options}: {options: CliOptions}) {
         </Box>
 
         <Box flexDirection="column" width={34}>
-          <IntroPanel />
-
-          <Box marginTop={1}>
-            <ControlsPanel />
-          </Box>
+          <ControlsPanel />
 
           <Box marginTop={1}>
             <SessionPanel isInteractive={isRawModeSupported} selectedDeviceLabel={selectedDeviceLabel} />
@@ -426,7 +411,9 @@ function App({options}: {options: CliOptions}) {
         </Box>
       </Box>
 
-      <Footer />
+      <Box alignSelf="center" width={100}>
+        <Footer />
+      </Box>
     </Box>
   );
 }
