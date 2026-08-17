@@ -75,22 +75,30 @@ sudo pacman -S python-hidapi
 
 ## Installation
 
-### Quick start (recommended)
+### Quick commands
 
-Run it instantly without installing anything globally:
+Run the package directly with any of these:
 
 ```bash
 npx evolf-cli
+pnpm dlx evolf-cli
 ```
 
-### Install the `evolf` terminal command
+Install the `evolf` command globally with npm:
 
-If you want to launch the app by typing `evolf`, run these commands in this order:
+```bash
+npm i -g evolf-cli
+evolf
+```
+
+### Install the `evolf` terminal command on Linux
+
+If `npm i -g evolf-cli` does not put `evolf` on your `PATH`, use a local npm prefix:
 
 ```bash
 npm config set prefix ~/.local
 export PATH="$HOME/.local/bin:$PATH"
-npm install -g evolf-cli
+npm i -g evolf-cli
 evolf
 ```
 
@@ -100,13 +108,14 @@ To keep that `PATH` change permanently, add this line to your shell config such 
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-### Alternative without global install
+### pnpm global install
+
+If your pnpm global bin directory is already on `PATH`, this also works:
 
 ```bash
-pnpm dlx evolf-cli
+pnpm add -g evolf-cli
+evolf
 ```
-
-`pnpm add -g evolf-cli` is intentionally not recommended here because it depends on each user's global pnpm `PATH` setup.
 
 ## Usage
 
