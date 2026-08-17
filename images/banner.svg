@@ -42,14 +42,14 @@
 
   <text x="560" y="108" fill="#F8FAFC" font-family="Verdana, Geneva, sans-serif" font-size="48" font-weight="700">Evolf</text>
   <text x="560" y="148" fill="#93C5FD" font-family="Verdana, Geneva, sans-serif" font-size="22" font-weight="600">Ink-powered terminal UI for controlling mouse LED modes</text>
-  <text x="560" y="188" fill="#CBD5E1" font-family="Verdana, Geneva, sans-serif" font-size="18">Interactive TUI, direct CLI mode, npm + npx + pnpm support</text>
+  <text x="560" y="188" fill="#CBD5E1" font-family="Verdana, Geneva, sans-serif" font-size="18">Quick start with npx, persistent install with npm, optional pnpm dlx</text>
 
   <g>
     <rect x="560" y="214" width="120" height="38" rx="12" fill="#111827" stroke="#38BDF8"/>
     <text x="594" y="239" fill="#38BDF8" font-family="Verdana, Geneva, sans-serif" font-size="18" font-weight="700">npm</text>
     <rect x="694" y="214" width="120" height="38" rx="12" fill="#111827" stroke="#A78BFA"/>
     <text x="722" y="239" fill="#C4B5FD" font-family="Verdana, Geneva, sans-serif" font-size="18" font-weight="700">npx</text>
-    <rect x="828" y="214" width="140" height="38" rx="12" fill="#111827" stroke="#22D3EE"/>
-    <text x="856" y="239" fill="#67E8F9" font-family="Verdana, Geneva, sans-serif" font-size="18" font-weight="700">pnpm</text>
+    <rect x="828" y="214" width="180" height="38" rx="12" fill="#111827" stroke="#22D3EE"/>
+    <text x="854" y="239" fill="#67E8F9" font-family="Verdana, Geneva, sans-serif" font-size="18" font-weight="700">pnpm dlx</text>
   </g>
 </svg>

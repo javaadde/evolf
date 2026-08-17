@@ -24,6 +24,7 @@
   "files": [
     "dist",
     "evolf.py",
+    "scripts",
     "README.md",
     "LICENSE"
   ],
@@ -35,6 +36,7 @@
     "build": "tsc --project tsconfig.json",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "start": "node dist/index.js",
+    "postinstall": "node scripts/postinstall.mjs",
     "prepare": "npm run build",
     "prepack": "npm run build",
     "link-cli": "npm run build && npm install -g --prefix ~/.local ."

@@ -12,12 +12,12 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Ink-Terminal_UI-111827?style=flat-square&logo=react&logoColor=61dafb" alt="Ink terminal UI" />
   <img src="https://img.shields.io/badge/HID-Python_backend-111827?style=flat-square&logo=python&logoColor=ffd43b" alt="Python HID backend" />
-  <img src="https://img.shields.io/badge/Supports-npm%20%7C%20npx%20%7C%20pnpm-111827?style=flat-square&logo=pnpm&logoColor=f9ad00" alt="Supports npm npx pnpm" />
+  <img src="https://img.shields.io/badge/Supports-npm%20%7C%20npx%20%7C%20pnpm%20dlx-111827?style=flat-square&logo=pnpm&logoColor=f9ad00" alt="Supports npm npx pnpm dlx" />
 </p>
 
 <p align="center">
   A polished terminal UI for controlling LED modes on the <b>Amkette Evofox Phantom</b> mouse.<br />
-  Built with <b>Ink + React</b>, powered by a lightweight <b>Python HID backend</b>, and packaged for <b>npm</b>, <b>npx</b>, and <b>pnpm</b> users.
+  Built with <b>Ink + React</b>, powered by a lightweight <b>Python HID backend</b>, with a simple install flow for <b>npx</b>, <b>npm</b>, and <b>pnpm dlx</b>.
 </p>
 
 ## Preview
@@ -42,7 +42,7 @@ The mouse ships with a Windows-only configuration utility. This repo provides a 
 | Direct CLI mode | Run `evolf --mode slow` for scripts or quick toggles |
 | Auto-detection | Tries to find a compatible mouse automatically |
 | Manual overrides | Supports `--vid` and `--pid` for hardware variants |
-| Multi-tool install | Works with `npm`, `npx`, `pnpm`, and `pnpm dlx` |
+| Simple install | Quick start with `npx`, persistent install with `npm`, optional `pnpm dlx` |
 | Publishable package | Ready for npm distribution with bundled runtime files |
 
 ## Features
@@ -75,31 +75,38 @@ sudo pacman -S python-hidapi
 
 ## Installation
 
-### npm
+### Quick start (recommended)
 
-```bash
-npm install -g evolf-cli
-evolf
-```
-
-### pnpm
-
-```bash
-pnpm add -g evolf-cli
-evolf
-```
-
-### npx
+Run it instantly without installing anything globally:
 
 ```bash
 npx evolf-cli
 ```
 
-### pnpm dlx
+### Install the `evolf` terminal command
+
+If you want to launch the app by typing `evolf`, run these commands in this order:
+
+```bash
+npm config set prefix ~/.local
+export PATH="$HOME/.local/bin:$PATH"
+npm install -g evolf-cli
+evolf
+```
+
+To keep that `PATH` change permanently, add this line to your shell config such as `~/.bashrc`:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+### Alternative without global install
 
 ```bash
 pnpm dlx evolf-cli
 ```
+
+`pnpm add -g evolf-cli` is intentionally not recommended here because it depends on each user's global pnpm `PATH` setup.
 
 ## Usage
 
