@@ -17,7 +17,7 @@ const TITLE_LINES = [
 ];
 const INITIAL_STATUS = 'Idle. Pick a mode and press Enter.';
 const DEVICE_MODE_MESSAGE = 'No read-back HID report exists yet, so live sync is unavailable.';
-const PACKAGE_LABEL = 'evofox terminal ui';
+const PACKAGE_LABEL = 'evolf terminal ui';
 
 type Mode = (typeof MODES)[number];
 
@@ -67,9 +67,9 @@ const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirectory = dirname(currentFilePath);
 const packageRoot = resolve(currentDirectory, '..');
 const packageJsonPath = resolve(packageRoot, 'package.json');
-const pythonScriptPath = resolve(packageRoot, 'evofox-phantom.py');
+const pythonScriptPath = resolve(packageRoot, 'evolf.py');
 const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8')) as {name?: string; version?: string};
-const packageName = packageJson.name ?? 'evofox';
+const packageName = packageJson.name ?? 'evolf-cli';
 const packageVersion = packageJson.version ?? '0.0.0';
 
 function isMode(value: string): value is Mode {
@@ -129,7 +129,7 @@ function parseCliOptions(argv: string[]): CliOptions {
 }
 
 function printHelp() {
-  process.stdout.write(`evofox\n\nUsage:\n  evofox\n  evofox --mode <off|static|slow|fast>\n  evofox --vid <hex> --pid <hex>\n\nOptions:\n  --vid <hex>     Override USB vendor ID\n  --pid <hex>     Override USB product ID\n  --mode <mode>   Send a mode without opening the TUI\n  --led <mode>    Alias for --mode\n  -l <mode>       Alias for --mode\n  -h, --help      Show this help message\n  -v, --version   Show package version\n\nPackage:\n  ${packageName}@${packageVersion}\n`);
+  process.stdout.write(`evolf\n\nUsage:\n  evolf\n  evolf --mode <off|static|slow|fast>\n  evolf --vid <hex> --pid <hex>\n\nOptions:\n  --vid <hex>     Override USB vendor ID\n  --pid <hex>     Override USB product ID\n  --mode <mode>   Send a mode without opening the TUI\n  --led <mode>    Alias for --mode\n  -l <mode>       Alias for --mode\n  -h, --help      Show this help message\n  -v, --version   Show package version\n\nPackage:\n  ${packageName}@${packageVersion}\n`);
 }
 
 function printVersion() {
@@ -216,7 +216,7 @@ function Header() {
           {line}
         </Text>
       ))}
-      <Text dimColor>Retro control panel for the Evofox Phantom mouse</Text>
+      <Text dimColor>Retro control panel for the Evolf mouse controller</Text>
     </Box>
   );
 }

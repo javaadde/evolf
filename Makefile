@@ -1,4 +1,4 @@
-src_file=evofox-phantom.py
+src_file=evolf.py
 exe_file=$(shell echo ${src_file} | cut -d . -f 1)
 install_dir=/usr/local/bin
 
@@ -19,4 +19,4 @@ uninstall:
 	rm ${install_dir}/${exe_file}
 
 uninstall-cli:
-	npm uninstall -g --prefix $(HOME)/.local evofox-phantom-ink-cli
+	npm uninstall -g --prefix $(HOME)/.local evolf-cli

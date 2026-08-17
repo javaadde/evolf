@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="./images/banner.svg" alt="Evofox Phantom banner" width="100%" />
+  <img src="./images/banner.svg" alt="Evolf banner" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/evofox-phantom-ink-cli"><img src="https://img.shields.io/npm/v/evofox-phantom-ink-cli?style=for-the-badge&logo=npm&label=npm" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/evolf-cli"><img src="https://img.shields.io/npm/v/evolf-cli?style=for-the-badge&logo=npm&label=npm" alt="npm version" /></a>
   <img src="https://img.shields.io/badge/node-%3E%3D20-0f172a?style=for-the-badge&logo=node.js&logoColor=7dd3fc" alt="Node 20+" />
   <img src="https://img.shields.io/badge/python-3.x-0f172a?style=for-the-badge&logo=python&logoColor=facc15" alt="Python 3" />
   <img src="https://img.shields.io/badge/license-MIT-0f172a?style=for-the-badge&logo=open-source-initiative&logoColor=93c5fd" alt="MIT license" />
@@ -23,11 +23,11 @@
 ## Preview
 
 <p align="center">
-  <img src="./images/gui.png" alt="Evofox terminal UI preview" width="900" />
+  <img src="./images/gui.png" alt="Evolf terminal UI preview" width="900" />
 </p>
 
 <p align="center">
-  This is how the current TUI looks when launched with <code>evofox</code>.
+  This is how the current TUI looks when launched with <code>evolf</code>.
 </p>
 
 ## Why This Project Exists
@@ -39,7 +39,7 @@ The mouse ships with a Windows-only configuration utility. This repo provides a 
 | Capability | Details |
 | --- | --- |
 | Interactive TUI | Navigate modes with arrow keys and send commands with Enter |
-| Direct CLI mode | Run `evofox --mode slow` for scripts or quick toggles |
+| Direct CLI mode | Run `evolf --mode slow` for scripts or quick toggles |
 | Auto-detection | Tries to find a compatible mouse automatically |
 | Manual overrides | Supports `--vid` and `--pid` for hardware variants |
 | Multi-tool install | Works with `npm`, `npx`, `pnpm`, and `pnpm dlx` |
@@ -48,7 +48,7 @@ The mouse ships with a Windows-only configuration utility. This repo provides a 
 ## Features
 
 - LED modes: `off`, `static`, `slow`, `fast`
-- Ink-based terminal UI exposed as `evofox`
+- Ink-based terminal UI exposed as `evolf`
 - Python HID backend bundled in the published package
 - Works in interactive TTY mode and supports non-interactive direct commands
 - Public-package friendly layout without machine-specific paths
@@ -78,27 +78,27 @@ sudo pacman -S python-hidapi
 ### npm
 
 ```bash
-npm install -g evofox-phantom-ink-cli
-evofox
+npm install -g evolf-cli
+evolf
 ```
 
 ### pnpm
 
 ```bash
-pnpm add -g evofox-phantom-ink-cli
-evofox
+pnpm add -g evolf-cli
+evolf
 ```
 
 ### npx
 
 ```bash
-npx evofox-phantom-ink-cli
+npx evolf-cli
 ```
 
 ### pnpm dlx
 
 ```bash
-pnpm dlx evofox-phantom-ink-cli
+pnpm dlx evolf-cli
 ```
 
 ## Usage
@@ -106,27 +106,27 @@ pnpm dlx evofox-phantom-ink-cli
 ### Launch the interactive UI
 
 ```bash
-evofox
+evolf
 ```
 
 ### Send a mode directly
 
 ```bash
-evofox --mode slow
-evofox --mode static
+evolf --mode slow
+evolf --mode static
 ```
 
 ### Override USB vendor and product IDs
 
 ```bash
-evofox --vid 0x30fa --pid 0x1440
-evofox --vid 0x30fa --pid 0x1440 --mode fast
+evolf --vid 0x30fa --pid 0x1440
+evolf --vid 0x30fa --pid 0x1440 --mode fast
 ```
 
 ### Show help
 
 ```bash
-evofox --help
+evolf --help
 ```
 
 ## Product ID Notes
@@ -184,7 +184,7 @@ make install-cli-npm
 
 ```text
 .
-├── evofox-phantom.py   # Python HID backend
+├── evolf.py            # Python HID backend
 ├── src/index.tsx       # Ink terminal UI entry
 ├── images/gui.png      # UI screenshot used in the README
 ├── images/banner.svg   # README hero banner

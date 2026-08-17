@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 ##
-## Copyright (c) 2020 https://github.com/bojle
+## Copyright (c) 2026 https://github.com/javaadde
 ##
 ## Permission is hereby granted, free of charge, to any person obtaining a copy
 ## of this software and associated documentation files (the "Software"), to
@@ -24,7 +24,7 @@
 import argparse
 import hid
 
-program_name = "evofox-phantom"
+program_name = "evolf"
 program_desc = "Control LED modes in Amkette Evofox Gaming Mouse"
 phantom_vendor_id = "0x18f8"
 phantom_product_id = "0x1286"

@@ -1,20 +1,20 @@
 {
-  "name": "evofox-phantom-ink-cli",
+  "name": "evolf-cli",
   "version": "0.1.0",
-  "description": "Ink-based terminal UI for controlling Evofox Phantom mouse LED modes",
+  "description": "Ink-based terminal UI for controlling Evolf mouse LED modes",
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@11.3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bojle/evofox-phantom.git"
+    "url": "git+https://github.com/javaadde/evolf.git"
   },
-  "homepage": "https://github.com/bojle/evofox-phantom#readme",
+  "homepage": "https://github.com/javaadde/evolf#readme",
   "bugs": {
-    "url": "https://github.com/bojle/evofox-phantom/issues"
+    "url": "https://github.com/javaadde/evolf/issues"
   },
   "keywords": [
-    "evofox",
+    "evolf",
     "mouse",
     "ink",
     "cli",
@@ -23,12 +23,12 @@
   ],
   "files": [
     "dist",
-    "evofox-phantom.py",
+    "evolf.py",
     "README.md",
     "LICENSE"
   ],
   "bin": {
-    "evofox": "dist/index.js"
+    "evolf": "dist/index.js"
   },
   "scripts": {
     "dev": "ts-node-esm src/index.tsx",
