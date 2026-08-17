@@ -32,7 +32,7 @@
     "evolf": "dist/index.js"
   },
   "scripts": {
-    "dev": "ts-node-esm src/index.tsx",
+    "dev": "node --loader ts-node/esm src/index.tsx",
     "build": "tsc --project tsconfig.json",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "start": "node dist/index.js",
